@@ -6,31 +6,31 @@ import { IoIosMenu } from "react-icons/io";
 const menus = [
   {
     link: "/",
-    name: "Beranda",
+    name: "Dashboard",
     active: false,
   },
-  {
-    link: "/about",
-    name: "Tentang Kami",
-    active: false,
-  },
-  {
-    link: "/services",
-    name: "Layanan Kami",
-    active: false,
-  },
-  {
-    link: "/portfolio",
-    name: "Portfolio",
-    active: false,
-  },
+  // {
+  //   link: "/about",
+  //   name: "Tentang Kami",
+  //   active: false,
+  // },
+  // {
+  //   link: "/services",
+  //   name: "Layanan Kami",
+  //   active: false,
+  // },
+  // {
+  //   link: "/portfolio",
+  //   name: "Portfolio",
+  //   active: false,
+  // },
   {
     link: "/article",
     name: "Artikel",
     active: false,
   },
   {
-    link: "/konsultasi",
+    link: "/developer/konsultasi",
     name: "Konsultasi",
     active: false,
   },

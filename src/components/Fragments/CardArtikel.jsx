@@ -5,14 +5,7 @@ import { useCookies } from "react-cookie";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { DateConverter } from "../Elements/DateConverter";
-const CardArtikel = ({
-  id,
-  image,
-  title,
-  author,
-  content,
-  published_at
-}) => {
+const CardArtikel = ({ id, image, title, author, content, published_at }) => {
   const [cookies, setCookie, removeCookie] = useCookies([]);
   const [user, setUser] = useState("");
 
@@ -42,15 +35,11 @@ const CardArtikel = ({
         console.log(res);
       }
     });
-  } 
+  };
   return (
     <div className="block max-w-[300px] md:max-w-[409px] mx-auto mt-[43px] rounded-xl font-body overflow-hidden shadow-lg box-border">
       <Link to={`/article/${id}`}>
-        <img
-          src={`http://localhost:3000/article/${image}`}
-          alt="Cards"
-          className="w-full h-auto"
-        />
+        <img src={`${image}`} alt="Cards" className="w-full h-auto" />
       </Link>
       <div className="px-[14px] py-3 box-border leading-3">
         <Link to={`/article/${id}`}>
@@ -64,22 +53,20 @@ const CardArtikel = ({
       </div>
       {user ? (
         <div className="flex justify-end gap-4 pe-3 pb-3">
-        <Link to={`/developer/article/edit/${id}`}>
-          <img src="svg/edit.png" alt="" />
-        </Link>
-        <form onSubmit={handleDeleteArticle}>
-        <button type="submit">
-          <img src="svg/delete.png" alt="" />
-        </button>
-        </form>
-      </div>
-      ) : <></>}
+          <Link to={`/developer/article/edit/${id}`}>
+            <img src="svg/edit.png" alt="" />
+          </Link>
+          <form onSubmit={handleDeleteArticle}>
+            <button type="submit">
+              <img src="svg/delete.png" alt="" />
+            </button>
+          </form>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
 
-
-
 export default CardArtikel;
-
-

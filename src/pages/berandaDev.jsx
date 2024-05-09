@@ -101,7 +101,7 @@ const BerandaDev = () => {
           ))}
         </section>
       </section>
-      <form onSubmit={handleLogout} className="w-full mx-auto">
+      {/* <form onSubmit="" className="w-full mx-auto">
         <Button
           type="submit"
           classname="absolute z-50 bottom-[274px] right-[80px] py-2 px-10 bg-primary rounded-full
@@ -109,7 +109,7 @@ const BerandaDev = () => {
         >
           Logout
         </Button>
-      </form>
+      </form> */}
       <StylizedFrame
         urlImage="../images/stylized-frame-3-left.png"
         classname="hidden absolute left-[0px] top-[240px] md:z-10 md:block md:w-[60px] lg:w-[80px] lg:top-[420px]"

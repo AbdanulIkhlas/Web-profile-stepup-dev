@@ -8,12 +8,86 @@ import StylizedFrame from "../components/Elements/StylizedFrame";
 
 const KonsultasiDev = () => {
   // memanggil object konsultasi
-  const [consultations, setConsultations] = useState([]);
-  useEffect(() => {
-    getConsultations((data) => {
-      setConsultations(data);
-    });
-  }, []);
+  // const [consultations, setConsultations] = useState([]);
+  // useEffect(() => {
+  //   getConsultations((data) => {
+  //     setConsultations(data);
+  //   });
+  // }, []);
+
+  const consultations = [
+    {
+      name: "John Doe",
+      email: "john@example.com",
+      question: "How can I improve my programming skills?",
+      date: "2024-05-10",
+      time: "10:00 AM",
+    },
+    {
+      name: "Alice Smith",
+      email: "alice@example.com",
+      question: "What are the best practices for UI design?",
+      date: "2024-05-11",
+      time: "11:30 AM",
+    },
+    {
+      name: "Bob Johnson",
+      email: "bob@example.com",
+      question: "How do I troubleshoot network issues?",
+      date: "2024-05-12",
+      time: "2:00 PM",
+    },
+    {
+      name: "Emily Brown",
+      email: "emily@example.com",
+      question: "What are some tips for time management?",
+      date: "2024-05-13",
+      time: "4:30 PM",
+    },
+    {
+      name: "David Wilson",
+      email: "david@example.com",
+      question: "How can I learn a new language quickly?",
+      date: "2024-05-14",
+      time: "9:00 AM",
+    },
+    {
+      name: "Sarah Davis",
+      email: "sarah@example.com",
+      question: "What are the latest trends in web development?",
+      date: "2024-05-15",
+      time: "1:00 PM",
+    },
+    {
+      name: "Michael White",
+      email: "michael@example.com",
+      question: "How do I optimize my website for search engines?",
+      date: "2024-05-16",
+      time: "3:30 PM",
+    },
+    {
+      name: "Emma Garcia",
+      email: "emma@example.com",
+      question: "What are the basics of machine learning?",
+      date: "2024-05-17",
+      time: "10:30 AM",
+    },
+    {
+      name: "James Martinez",
+      email: "james@example.com",
+      question: "How do I start freelancing as a programmer?",
+      date: "2024-05-18",
+      time: "12:00 PM",
+    },
+    {
+      name: "Olivia Rodriguez",
+      email: "olivia@example.com",
+      question: "What are some common JavaScript interview questions?",
+      date: "2024-05-19",
+      time: "2:30 PM",
+    },
+  ];
+
 
   return (
     <div className="font-body flex flex-col min-h-screen">
@@ -22,7 +96,7 @@ const KonsultasiDev = () => {
         urlImage="../images/stylized-frame-2-right.png"
         classname="hidden absolute right-[90px] top-[60px] lg:block md:w-[100px] lg:w-[159px] lg:right-[120px]"
       ></StylizedFrame>
-      <main className="mt-16 font-body lg:px-28">
+      <main className="mt-16 pb-96 font-body lg:px-28">
         <section className="relative text-center pt-10">
           <h1 className=" inline-block text-xl font-bold text-center lg:text-2xl lg:mt-20">
             KONSULTASI

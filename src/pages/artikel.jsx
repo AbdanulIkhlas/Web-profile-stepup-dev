@@ -1,48 +1,73 @@
-import { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
-import NavBar from "../components/Fragments/Navbar";
 import Footer from "../components/Fragments/Footer";
 import CardArtikel from "../components/Fragments/CardArtikel";
 import Button from "../components/Elements/Button/Button";
 import LatestCardArticle from "../components/Fragments/LatestCardArticle";
-import axios from "axios";
-import {
-  getArticles,
-  destroyArticle,
-  getLatestArticle,
-} from "../services/article.service";
-import NavbarDev from "../components/Fragments/NavbarDev";
 import Navbar from "../components/Fragments/Navbar";
 import useVerifyUser from "../hooks/useVerifyUser";
 
 const Artikel = () => {
-  const [articles, setArticles] = useState([]);
-  const [ids, setIds] = useState([]);
-  const [cookies, setCookie, removeCookie] = useCookies([]);
-  const [latestArticle, setLatestArticle] = useState([]);
   const user = useVerifyUser();
-  
-  useEffect(() => {
-    getArticles((res) => {
-      if (res){
-        setArticles(res.articles);
-        setIds(res.articles.map((article) => article._id));
-      } else {
-        console.log(res);
-      }
-    });
-  }, [articles]);
 
-  useEffect(() => {
-    getLatestArticle((res) => {
-      if (res) {
-        setLatestArticle(res.articles);
-      } else {
-        console.log(res);
-      }
-    });
-  }, []);
+  const latestArticle = [
+    {
+      id: 1,
+      image: "../../../images/machineLearning.png",
+      title: "Mengenal Konsep Machine Learning",
+      author: "John Doe",
+      content:
+        "Machine learning adalah cabang dari kecerdasan buatan yang berfokus pada pembuatan sistem yang dapat belajar dari data.",
+      published_at: "2024-05-09",
+    },
+    {
+      id: 2,
+      image: "../../../images/blockchain.png",
+      title: "Penerapan Blockchain dalam Keuangan",
+      author: "Alice Smith",
+      content:
+        "Blockchain telah mengubah paradigma dalam industri keuangan dengan memberikan transparansi dan keamanan yang tinggi.",
+      published_at: "2024-05-08",
+    },
+    {
+      id: 3,
+      image: "../../../images/iot.png",
+      title: "Pengenalan Internet of Things (IoT)",
+      author: "Bob Johnson",
+      content:
+        "Internet of Things adalah konsep di mana objek fisik dapat terhubung dan bertukar data melalui internet.",
+      published_at: "2024-05-07",
+    },
+  ];
+
+  const articles = [
+    {
+      id: 4,
+      image: "../../../images/reactJs.png",
+      title: "Memahami Dasar-dasar ReactJS",
+      author: "Emily Brown",
+      content:
+        "ReactJS adalah library JavaScript yang digunakan untuk membangun antarmuka pengguna yang interaktif.",
+      published_at: "2024-05-06",
+    },
+    {
+      id: 5,
+      image: "../../../images/mobileDev.png",
+      title: "Teknik Pengembangan Aplikasi Mobile",
+      author: "David Wilson",
+      content:
+        "Pengembangan aplikasi mobile melibatkan berbagai teknik dan platform, seperti Android dan iOS.",
+      published_at: "2024-05-05",
+    },
+    {
+      id: 6,
+      image: "../../../images/dataScience.png",
+      title: "Peran Data Science dalam Bisnis",
+      author: "Sarah Davis",
+      content:
+        "Data science membantu bisnis dalam mengambil keputusan berdasarkan analisis data yang akurat dan mendalam.",
+      published_at: "2024-05-04",
+    },
+  ];
 
   return (
     <>
@@ -77,7 +102,7 @@ const Artikel = () => {
         {/* <LatestCardArticle /> */}
         <div className="w-full">
           {latestArticle.map((article, index) => (
-            <LatestCardArticle key={ids} id={ids[index]} {...article} />
+            <LatestCardArticle key={index} id={index} {...article} />
           ))}
         </div>
         {/* memanggil object semua artikel */}
@@ -86,7 +111,7 @@ const Artikel = () => {
         </h2>
         <div className="md:grid md:grid-cols-3 md:gap-4">
           {articles.map((article, index) => (
-            <CardArtikel key={ids[index]} id={ids[index]} {...article} />
+            <CardArtikel key={index} id={index} {...article} />
           ))}
         </div>
       </main>

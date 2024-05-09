@@ -50,7 +50,7 @@ const LatestCardArticle = ({
     <div className="block md:flex md:flex-wrap max-w-[300px] md:max-w-[1200px] mx-auto mt-[43px] rounded-xl font-body overflow-hidden shadow-lg box-border">
       <Link to={`/article/${id}`} className="md:flex-1">
         <img
-          src={`http://localhost:3000/article/${image}`}
+          src={`${image}`}
           alt="Cards"
           className="w-full h-auto md:h-full"
         />
